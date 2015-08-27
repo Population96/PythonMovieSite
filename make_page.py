@@ -2,7 +2,7 @@
 # With code modifications by Alex Brocklebank
 # Date: 8/08/15
 # Code from Udacity Course ud036
-# https://www.udacity.com/course/programming-foundations-with-python--ud036-nd
+# https://www.udacity.com/course/ud036
 
 import webbrowser
 import os
@@ -145,8 +145,10 @@ def create_movie_tiles_content(movies):
     content = ''
     for movie in movies:
         # Extract the youtube ID from the url
-        youtube_id_match = re.search(r'(?<=v=)[^&#]+', movie.trailer_youtube_url)
-        youtube_id_match = youtube_id_match or re.search(r'(?<=be/)[^&#]+', movie.trailer_youtube_url)
+        youtube_id_match = re.search(r'(?<=v=)[^&#]+',
+                                     movie.trailer_youtube_url)
+        youtube_id_match = youtube_id_match or re.search(
+            r'(?<=be/)[^&#]+',movie.trailer_youtube_url)
         trailer_youtube_id = youtube_id_match.group(0) if youtube_id_match else None
 
         # Append the tile for the movie with its content filled in
@@ -164,12 +166,15 @@ def open_movies_page(movies):
     # Create or overwrite the output file
     with open('alexs_movies.html', 'w') as output_file:
 
-        # Replace the placeholder for the movie tiles with the actual dynamically generated content
-        rendered_content = main_page_content.format(movie_tiles=create_movie_tiles_content(movies))
+        # Replace the placeholder for the movie tiles with the actual
+        #  dynamically generated content
+        rendered_content = main_page_content.format(
+            movie_tiles=create_movie_tiles_content(movies))
 
         # Output the file
         output_file.write(main_page_head + rendered_content)
 
         # open the output file in the browser
         url = os.path.abspath(output_file.name)
-        webbrowser.open('file://' + url, new=2) # open in a new tab, if possible
+        # open in a new tab, if possible
+        webbrowser.open('file://' + url, new=2) 

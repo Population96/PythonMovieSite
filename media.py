@@ -1,7 +1,7 @@
 # Author: Alex Brocklebank
 # Date: 8/01/15
 # Created with code from Udacity Course ud036
-# https://www.udacity.com/course/programming-foundations-with-python--ud036-nd
+# https://www.udacity.com/course/ud036
 
 import webbrowser
 
@@ -18,7 +18,8 @@ class Movie():
     VALID_RATINGS = ["G", "PG", "PG-13", "R"]
 
     # Class Constructor:
-    def __init__(self, movie_title, year, movie_storyline, poster_image, trailer_youtube):
+    def __init__(self, movie_title, year, movie_storyline, poster_image,
+                 trailer_youtube):
         """ Constructs Movie object """
         self.title = movie_title
         self.year = year

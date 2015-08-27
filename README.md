@@ -14,7 +14,7 @@ make_page.py
 make_page.pyc
 media.py
 media.pyc
-README.txt
+README.md
 
 To build page: 
 open entertainment_center.py and run in python environment.  Web page will automatically open.
@@ -31,3 +31,8 @@ round the movie tile edges with CSS3
 included color matched dropshadows to the tiles
 added storyline text as tooltip text when hovering the mouse over the movie posters
 included the year in the class definition to display under the title
+
+8.26.15
+added documentation to functions
+switched to with: block for file writing in make_page.py
+trimmed line lengths to 72 characters
