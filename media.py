@@ -19,6 +19,7 @@ class Movie():
 
     # Class Constructor:
     def __init__(self, movie_title, year, movie_storyline, poster_image, trailer_youtube):
+        """ Constructs Movie object """
         self.title = movie_title
         self.year = year
         self.storyline = movie_storyline
@@ -27,4 +28,5 @@ class Movie():
 
     # Defined Class Function:
     def show_trailer(self):
+        """ Opens Youtube trailer in browser window """
         webbrowser.open(self.trailer_youtube_url)
